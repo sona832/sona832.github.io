@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shop</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to our Online Shop</h1>
+
+    <div class="product-container">
+        <% 
+            List<Product> products = ProductData.getProducts();
+            for (Product product : products) {
+        %>
+        <div class="product">
+            <img src="<%= product.getImage() %>" alt="<%= product.getName() %>">
+            <h3><%= product.getName() %></h3>
+            <p>Price: $<%= product.getPrice() %></p>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>
